@@ -5,6 +5,7 @@ import Pokedex from './Pokedex';
 import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 import PokemonDetails from './PokemonDetails';
 import About from './About';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/" render={() => (<Pokedex pokemons={pokemons} />)}/>
         <Route  path="/About" component={About}/>
         <Route path="/pokemons/:id" render={(props) => <PokemonDetails {...props} info={pokemons}/> }/>
+        <Route path="*" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
